@@ -1,12 +1,20 @@
 //Emma Lee
 //Sept 29 2022
 
+PImage[] gif;
+int numberOfFrames;
+int f;
+
 import ddf.minim.*;
 import ddf.minim.analysis.*;
 import ddf.minim.effects.*;
 import ddf.minim.signals.*;
 import ddf.minim.spi.*;
 import ddf.minim.ugens.*;
+
+//sound variables
+Minim minim;
+AudioPlayer success, failure, music;
 
 PFont milkycoffee;
 
@@ -27,8 +35,11 @@ int guess;
 final int TRUE = 1;
 final int FALSE = 2;
 final int RESET = 3;
+
 int score;
 int highscore;
+
+float moveY;
 
 
 
@@ -50,9 +61,36 @@ void setup() {
   //rectMode(CENTER);
   mode = INTRO;
   
+  moveY = height;
+  
+  //gif
+  numberOfFrames = 7;
+  gif = new PImage [numberOfFrames];
+  
+  int i = 0;
+  while ( i < numberOfFrames ) {
+    gif[i] = loadImage("frame_"+i+"_delay-0.01s.gif");
+    i = i + 1;
+  }
+  
+  //minim
+  minim = new Minim(this);
+  failure = minim.loadFile("FAILURE.wav");
+  success = minim.loadFile("SUCCESS.wav");
+  music = minim.loadFile("MUSIC.mp3");
+  
 }
 
 void draw() {
+  
+  //GIF
+  // image(gif[f], 0, 0, width, height);
+  //println(frameCount);
+  ////modulus of mod
+  //if(frameCount % 2 == 0) f = f+ 1;
+  //if (f == numberOfFrames) f = 0;
+  
+  
   if (mode == INTRO) {
     intro();
   } else if (mode == GAME) {
