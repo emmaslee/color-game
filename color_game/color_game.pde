@@ -66,12 +66,12 @@ void setup() {
   moveY = 0;
   
   //gif
-  numberOfFrames = 7;
+  numberOfFrames = 9;
   gif = new PImage [numberOfFrames];
   
   int i = 0;
   while ( i < numberOfFrames ) {
-    gif[i] = loadImage("frame_"+i+"_delay-0.01s.gif");
+    gif[i] = loadImage("frame_"+i+"_delay-0.04s.gif");
     i = i + 1;
   }
   

@@ -1,7 +1,7 @@
 void intro() {
   
   background(190, 228, 229);
-  image(gif[f], 300, 50, 250, 250);
+  image(gif[f], 0, 0, 800, 800);
   println(frameCount);
   //modulus of mod
   if (frameCount % 2 == 0) f = f+ 1;

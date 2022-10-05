@@ -1,5 +1,12 @@
 void gameover() {
   background(255, 0, 0);
+  
+  image(gif[f], 0, 0, 800, 800);
+  println(frameCount);
+  //modulus of mod
+  if (frameCount % 2 == 0) f = f+ 1;
+  if (f == numberOfFrames) f = 0;
+
   text("GAME OVER", 400, 400);
   
   //score
@@ -15,7 +22,7 @@ void gameover() {
   
   
   //Return to Game button
-  if (mouseX > 300 && mouseX < 500 && mouseY > 550 && mouseY < 600) {
+  if (mouseX > 300 && mouseX < 500 && mouseY > 500 && mouseY < 600) {
     fill(200);
   } else {
     fill(146, 240, 140);
@@ -27,10 +34,10 @@ void gameover() {
 }
 
  void gameoverClicks() {
-   if (mouseX > 300 && mouseX < 500 && mouseY > 550 && mouseY < 600){
+   if (mouseX > 300 && mouseX < 500 && mouseY > 500 && mouseY < 600){
    mode = INTRO;
    score = 0;
-   
+   moveY = 0;
    }
  }
  
