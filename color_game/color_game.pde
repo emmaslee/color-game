@@ -39,6 +39,7 @@ final int RESET = 3;
 int score;
 int highscore;
 
+int randomNum;
 float moveY;
 
 
@@ -60,8 +61,9 @@ void setup() {
   textAlign(CENTER, CENTER);
   //rectMode(CENTER);
   mode = INTRO;
-  
-  moveY = height;
+  score = 0;
+  highscore = 0;
+  moveY = 0;
   
   //gif
   numberOfFrames = 7;

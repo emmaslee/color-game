@@ -1,4 +1,5 @@
 void intro() {
+  
   background(190, 228, 229);
   image(gif[f], 300, 50, 250, 250);
   println(frameCount);
